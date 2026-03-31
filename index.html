@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <h1>User Management System</h1>
+
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="login-email">Email:</label><br>
+        <input type="email" id="login-email" name="email" required><br>
+        <label for="login-password">Password:</label><br>
+        <input type="password" id="login-password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h2>Admin Panel</h2>
+    <form id="admin-form">
+        <label for="admin-password">Enter Admin Password:</label><br>
+        <input type="password" id="admin-password" name="admin-password" required><br><br>
+        <button type="button" onclick="showAdminPanel()">Access Admin Dashboard</button>
+    </form>
+
+    <div id="admin-dashboard" style="display:none;">
+        <h3>Registered Users</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User data will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showAdminPanel() {
+            const adminPassword = document.getElementById('admin-password').value;
+            if (adminPassword === 'manash') {
+                document.getElementById('admin-dashboard').style.display = 'block';
+            } else {
+                alert('Incorrect Password!');
+            }
+        }
+    </script>
+</body>
+</html>
